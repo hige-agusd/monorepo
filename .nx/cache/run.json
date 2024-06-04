@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx run hige-ds:storybook",
+    "startTime": "2024-05-26T05:05:30.191Z",
+    "endTime": "2024-05-27T13:34:17.431Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "hige-ds:storybook",
+      "target": "storybook",
+      "projectName": "hige-ds",
+      "hash": "29a85837b7837ae70caea415c74767ad4744ead373e0207a1edf6052b927da5a",
+      "startTime": "2024-05-26T05:05:30.195Z",
+      "endTime": "2024-05-27T13:34:17.428Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    }
+  ]
+}

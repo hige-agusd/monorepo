@@ -5,7 +5,8 @@
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": true,   
+     "allowUmdGlobalAccess": true,
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
@@ -13,8 +14,11 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "jsx": "react-jsx",
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@monorepo/hige-ds": ["libs/hige-ds/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

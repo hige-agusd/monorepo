@@ -1,0 +1,47 @@
+export const horizonAlias = {
+  visited: 'unset',
+  color: 'unset',
+  white: 'unset',
+  background: 'unset',
+  hoverBackground: 'unset',
+  // tag
+  tagColor: 'unset',
+  tagBackground: 'unset',
+  // table / pagination
+  tableColor: 'unset',
+  tableOddCellBackground: 'unset',
+  tableHeaderBorder: 'unset',
+  tableSortActive: 'unset',
+  tableSortHover: 'unset',
+  // drawer
+  drawerColor: 'unset',
+  drawerLeftContentBackground: 'unset',
+  drawerRightContentBackground: 'unset',
+  // divider
+  dividerBackground: 'unset',
+  // dialog
+  dialogTypographyColor: 'unset',
+  dialogHeaderBackgroundColor: 'unset',
+  dialogHeaderSubtitleColor: 'unset',
+  closeIconColor: 'unset',
+  hoverCloseIconBackgroundColor: 'unset',
+  activeCloseIconBackgroundColor: 'unset',
+  focusCloseIconBackgroundColor: 'unset',
+  focusCloseIconBorderColor: 'unset',
+  disabledCloseIconColor: 'unset',
+  // statusLabel
+  statusLabelBorderColor: 'unset',
+  statusLabelBackgroundColor: 'unset',
+  statusLabelInfoColor: 'unset',
+  statusLabelInfoBorderColor: 'unset',
+  statusLabelInfoBackgroundColor: 'unset',
+  statusLabelSuccessColor: 'unset',
+  statusLabelSuccessBorderColor: 'unset',
+  statusLabelSuccessBackgroundColor: 'unset',
+  statusLabelWarningColor: 'unset',
+  statusLabelWarningBorderColor: 'unset',
+  statusLabelWarningBackgroundColor: 'unset',
+  statusLabelDangerColor: 'unset',
+  statusLabelDangerBorderColor: 'unset',
+  statusLabelDangerBackgroundColor: 'unset',
+};

@@ -1,0 +1,1954 @@
+{
+  "version": "5.1",
+  "nxVersion": "16.0.1",
+  "deps": {
+    "@dessert-box/react": "^0.7.5",
+    "@nrwl/workspace": "^18.0.8",
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@swc/helpers": "~0.5.0",
+    "@tanstack/react-query": "^4.29.5",
+    "@vanilla-extract/dynamic": "^2.1.0",
+    "@vanilla-extract/recipes": "^0.5.2",
+    "@vanilla-extract/webpack-plugin": "^2.3.7",
+    "classnames": "^2.5.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tslib": "^2.3.0",
+    "@babel/preset-react": "^7.14.5",
+    "@nrwl/storybook": "^18.1.3",
+    "@nx/cypress": "16.0.1",
+    "@nx/eslint-plugin": "16.0.1",
+    "@nx/jest": "16.0.1",
+    "@nx/js": "16.0.1",
+    "@nx/linter": "16.0.1",
+    "@nx/react": "16.0.1",
+    "@nx/rollup": "16.0.1",
+    "@nx/webpack": "16.0.1",
+    "@nx/workspace": "16.0.1",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
+    "@rollup/plugin-url": "^7.0.0",
+    "@storybook/addon-essentials": "7.0.7",
+    "@storybook/addon-interactions": "7.0.7",
+    "@storybook/addon-links": "7.0.7",
+    "@storybook/blocks": "7.0.7",
+    "@storybook/react": "7.0.7",
+    "@storybook/react-webpack5": "7.0.7",
+    "@storybook/testing-library": "0.0.14-next.2",
+    "@svgr/rollup": "^6.1.2",
+    "@svgr/webpack": "^6.1.2",
+    "@swc/cli": "~0.1.62",
+    "@swc/core": "~1.3.51",
+    "@testing-library/react": "14.0.0",
+    "@types/jest": "^29.4.0",
+    "@types/node": "18.14.2",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "@vanilla-extract/css": "^1.11.0",
+    "@vanilla-extract/sprinkles": "^1.6.0",
+    "babel-jest": "^29.4.1",
+    "cypress": "^12.2.0",
+    "eslint": "~8.15.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-cypress": "^2.10.3",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-storybook": "^0.6.11",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "nx": "16.0.1",
+    "nx-cloud": "latest",
+    "prettier": "^2.6.2",
+    "prop-types": "15.8.1",
+    "react-refresh": "^0.10.0",
+    "react-test-renderer": "18.2.0",
+    "storybook": "7.0.7",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
+    "typescript": "~4.9.5",
+    "url-loader": "^4.1.1"
+  },
+  "pathMappings": {
+    "@monorepo/hige-ds": [
+      "libs/hige-ds/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "nodes": {
+    "my-app-e2e": {
+      "name": "my-app-e2e",
+      "type": "e2e",
+      "data": {
+        "name": "my-app-e2e",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "apps/my-app-e2e/src",
+        "projectType": "application",
+        "targets": {
+          "e2e": {
+            "inputs": [
+              "default",
+              "^production"
+            ],
+            "executor": "@nx/cypress:cypress",
+            "options": {
+              "cypressConfig": "apps/my-app-e2e/cypress.config.ts",
+              "devServerTarget": "my-app:serve:development",
+              "testingType": "e2e"
+            },
+            "configurations": {
+              "production": {
+                "devServerTarget": "my-app:serve:production"
+              },
+              "ci": {
+                "devServerTarget": "my-app:serve-static"
+              }
+            }
+          },
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore"
+            ],
+            "executor": "@nx/linter:eslint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "apps/my-app-e2e/**/*.{js,ts}"
+              ]
+            },
+            "configurations": {}
+          }
+        },
+        "tags": [],
+        "implicitDependencies": [
+          "my-app"
+        ],
+        "root": "apps/my-app-e2e",
+        "files": [
+          {
+            "file": "apps/my-app-e2e/.eslintrc.json",
+            "hash": "cfe77ddcbfa729cd31852ea79a0daa5a55d90d86668805fda8392c7a558a3e3b"
+          },
+          {
+            "file": "apps/my-app-e2e/cypress.config.ts",
+            "hash": "e7cdac8e0bc13d4294444c57273b7567f2794b8d8ebd89126e4f01be84781ad4",
+            "dependencies": [
+              {
+                "target": "npm:cypress",
+                "source": "my-app-e2e",
+                "type": "static"
+              },
+              {
+                "target": "npm:@nx/cypress",
+                "source": "my-app-e2e",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "apps/my-app-e2e/project.json",
+            "hash": "dda1937dddac54033444fad751d838e554f0d1b2f06bd2b274d301134cb729b4"
+          },
+          {
+            "file": "apps/my-app-e2e/src/e2e/app.cy.ts",
+            "hash": "686b862c21cbd5879e2292b307e76d0baeed191f058f907072829d8f8b11886d"
+          },
+          {
+            "file": "apps/my-app-e2e/src/fixtures/example.json",
+            "hash": "ac95809a3706b1fb0ac8814225d6b0ef8813607cd1ea7e18d6207ae99bc9f840"
+          },
+          {
+            "file": "apps/my-app-e2e/src/support/app.po.ts",
+            "hash": "cb81016a81a87461ed6b31744a3e3ff2401ecbe089706def1073413254184113"
+          },
+          {
+            "file": "apps/my-app-e2e/src/support/commands.ts",
+            "hash": "b559b84f3e47d0e6a1557f43f02fac46277380e85ed1b8f1c1c877de0e5b3f75"
+          },
+          {
+            "file": "apps/my-app-e2e/src/support/e2e.ts",
+            "hash": "d073cec074912d85f98f84cc322391f6daa98c7814f257e9bc6a2127fd62c794"
+          },
+          {
+            "file": "apps/my-app-e2e/tsconfig.json",
+            "hash": "1dcd057a115a0ca5466efa84d153de6fc8dbb98c0642f4345c5dedf0d47bc1e4"
+          }
+        ]
+      }
+    },
+    "hige-ds": {
+      "name": "hige-ds",
+      "type": "lib",
+      "data": {
+        "name": "hige-ds",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/hige-ds/lib",
+        "projectType": "library",
+        "tags": [],
+        "targets": {
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore"
+            ],
+            "executor": "@nx/linter:eslint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "libs/hige-ds/**/*.{ts,tsx,js,jsx}"
+              ]
+            },
+            "configurations": {}
+          },
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "inputs": [
+              "production",
+              "^production"
+            ],
+            "executor": "@nx/rollup:rollup",
+            "outputs": [
+              "{options.outputPath}"
+            ],
+            "options": {
+              "outputPath": "dist/libs/hige-ds",
+              "tsConfig": "libs/hige-ds/tsconfig.lib.json",
+              "project": "libs/hige-ds/package.json",
+              "entryFile": "libs/hige-ds/index.ts",
+              "external": [
+                "react/jsx-runtime"
+              ],
+              "rollupConfig": "@nx/react/plugins/bundle-rollup",
+              "compiler": "babel",
+              "assets": [
+                {
+                  "glob": "libs/hige-ds/README.md",
+                  "input": ".",
+                  "output": "."
+                }
+              ]
+            },
+            "configurations": {}
+          },
+          "test": {
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ],
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "libs/hige-ds/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            }
+          },
+          "storybook": {
+            "executor": "@nrwl/storybook:storybook",
+            "options": {
+              "port": 6006,
+              "configDir": "./.storybook",
+              "config": {
+                "configFolder": "./.storybook"
+              }
+            }
+          }
+        },
+        "root": "libs/hige-ds",
+        "implicitDependencies": [],
+        "files": [
+          {
+            "file": "libs/hige-ds/.babelrc",
+            "hash": "3213ddb7630a21e5c3bd9205fae7ca61fcba817072daf3502172e1c903dabea4"
+          },
+          {
+            "file": "libs/hige-ds/.eslintrc.json",
+            "hash": "cd7add168bef136cca35b8748a365775518012b244d48f7396f8b9ad54fbd5ac"
+          },
+          {
+            "file": "libs/hige-ds/index.ts",
+            "hash": "df2ece0d4f09decfcd5988436b645b37330cebb5300671a802eb66bd758dd7bf"
+          },
+          {
+            "file": "libs/hige-ds/jest.config.ts",
+            "hash": "8ebd806f6f9ee94526095e5400a4361470664d4edbc460518fb60d38d4613811"
+          },
+          {
+            "file": "libs/hige-ds/lib/common/contracts.ts",
+            "hash": "09d177526b453124d37f9cbab22487faefff296b90ffa3cb46038fd6e3f4982c",
+            "dependencies": [
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/common/convert-file-size.ts",
+            "hash": "5e2ad982c1504f46ad740df18de691f76fe88618c014cab486297194e5fd36e6"
+          },
+          {
+            "file": "libs/hige-ds/lib/common/hooks/isomorphic-effect.ts",
+            "hash": "f4bb5479c7324038a3cd91abb57a36f435c547aa0efeaa6938477a2db78905e6",
+            "dependencies": [
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/common/hooks/previous-value.ts",
+            "hash": "e037d317189dbb5b5f18d5b470a4d794c9b15e3304d993f27540ea401d97fe21",
+            "dependencies": [
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/common/utils.ts",
+            "hash": "0314bd7d9a559edd0ccc5180e72878af9c7ee62270615f6f8d550eec937bd19b"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/base/accordion-content.tsx",
+            "hash": "5edd8586ff37fd602437647f71bc1d528a846d1880be2dfd5cf29dfac88805c9",
+            "dependencies": [
+              {
+                "target": "npm:@radix-ui/react-accordion",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/base/accordion-header.tsx",
+            "hash": "c4fa8a42147cdf8ba41f456a833781fcda4fdf3c4d3977c055b835e91669d26d",
+            "dependencies": [
+              {
+                "target": "npm:@radix-ui/react-accordion",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/base/accordion-item.tsx",
+            "hash": "87fd5b47b302453de98bca52858e22f29ca94bff97a86fc30d4e095d43639091",
+            "dependencies": [
+              {
+                "target": "npm:@radix-ui/react-accordion",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/base/accordion-trigger.tsx",
+            "hash": "301480760b73f217d44602eb724d6012301de042deffe278b76dabb12ed182b1",
+            "dependencies": [
+              {
+                "target": "npm:@radix-ui/react-accordion",
+                "source": "hige-ds",
+                "type": "static"
+              },
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/base/accordion-wrapper.tsx",
+            "hash": "db8d81055887b2f3fd28a803d15a562e681beddcbc7b787d7456092af797e25a",
+            "dependencies": [
+              {
+                "target": "npm:@radix-ui/react-accordion",
+                "source": "hige-ds",
+                "type": "static"
+              },
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/base/index.ts",
+            "hash": "1fb467a752d2da2967e67de11d45f1a3a9292a81f411c3672747308cc543bcdf"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/card-accordion/card-accordion.tsx",
+            "hash": "8a9962ef9102baafd148b72e4a9a5edd28416b7eaf51db4c728d1c2357c0a330",
+            "dependencies": [
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/card-accordion/index.ts",
+            "hash": "879d884401208f5dde6e37bcc4a00fcb0c1cd5d09183d5af6b2a6a7544ecf76b"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/card-accordion/styles.css.ts",
+            "hash": "aeb3fc3cae05c51ca69684ccf45aca463c87699ff94cff7381031449db8d722b",
+            "dependencies": [
+              {
+                "target": "npm:@vanilla-extract/css",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/hor/accordion-content.tsx",
+            "hash": "305ff7868f0a13feb9081025fb870fe8ab2994716e8b0faeae10fa00d61c6d1e"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/hor/accordion-item-context.tsx",
+            "hash": "52b66dfa8f6058b7af5f0c8ec05fb81834c128a3ec3eda7e9476fb7b8c0a74e9",
+            "dependencies": [
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/hor/accordion-item.tsx",
+            "hash": "3ddfa576140ed9253d7ad2f8b22742985b69b87efb42706a7885d3f620a917a2"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/hor/accordion-trigger.tsx",
+            "hash": "fe0fad88b4c9ebaec629a7de47239671be50fa72e06f923f5bfd1abb23b0e7aa"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/hor/accordion-wrapper.tsx",
+            "hash": "a943877f128b0a4e0eb02bfe3e83d9bf1a70485d739aefc16b71fe7f1dbc3386"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/hor/index.ts",
+            "hash": "8f666b97e5dcbce4ac0210b653e29b78b0e746ed4a4e8577badde024a978c30a"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/hor/styles.css.ts",
+            "hash": "04fbf36a837378780317e4d9a50e77119d830a8c456ea79fdf44fff0d49fffc5",
+            "dependencies": [
+              {
+                "target": "npm:@vanilla-extract/css",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/accordion/index.ts",
+            "hash": "ea768bba37bbfc32f5399131ac8f119e5d5182d8f9eda228823a616b23e7170e"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/boton/base.tsx",
+            "hash": "c3b0df8a5ab6e159a830c2c7bd7afd27a51ab89c7c935e137f704de2b5875679",
+            "dependencies": [
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/boton/btn.stories.tsx",
+            "hash": "0229a485f2d3b0ba3bc6298d5b2feaa6498ab63756cfe4384fff25484b513269",
+            "dependencies": [
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              },
+              {
+                "target": "npm:@storybook/react",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/boton/button.tsx",
+            "hash": "8a9e506db7893776c9e2fba25e5ce574001beb09d25105e2b4f9fc4aaef6a74d",
+            "dependencies": [
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              },
+              {
+                "target": "npm:classnames",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/boton/index.ts",
+            "hash": "b02c9d5599721a0dc412dc8e604525455774f03fbcb0bb08e1550dfaf03e9fdf"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/boton/new-styles.css.ts",
+            "hash": "a3d18f58e0823d44bbf3fa81acb33d325378e517aff42bdbbfd7cc737697fadc",
+            "dependencies": [
+              {
+                "target": "npm:@vanilla-extract/css",
+                "source": "hige-ds",
+                "type": "static"
+              },
+              {
+                "target": "npm:@vanilla-extract/recipes",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/boton/old.tsx",
+            "hash": "ac44f77cd80c054b7e21ea4263576e293d4beb9f92da2bb792cd41be8d18c7ed",
+            "dependencies": [
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/boton/shared-types.ts",
+            "hash": "0353c69b9956f9031a90ce61f0ed15e350726911641e46e3e10a2475bf8bad28"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/boton/styles.css.ts",
+            "hash": "af568bd45677062fddb409d1b38d65da9e90317f87f2b9d1ba8e5f81e12dfc93",
+            "dependencies": [
+              {
+                "target": "npm:@vanilla-extract/css",
+                "source": "hige-ds",
+                "type": "static"
+              },
+              {
+                "target": "npm:@vanilla-extract/recipes",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/box/box.tsx",
+            "hash": "c35a7f9597ddd7e48fe043facdcff9e9da65c5abdc8fcc8af12b4a22e577a627",
+            "dependencies": [
+              {
+                "target": "npm:@dessert-box/react",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/box/index.ts",
+            "hash": "b57abebb79370dacbe51c45e1d5c78ee7eb26263b2d26d76089bee01b27ecb40"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/index.ts",
+            "hash": "c4ccd1b570f4850e881c6f6cad53eb15daeb482f0d3da017a4a70c53b1a0a8ac"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/test/index.tsx",
+            "hash": "18a6f05b36c0d205c97f40b21e6c20659f9360fe1db10600d6dbf0bbd9acdb14"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/test/style.css.ts",
+            "hash": "6bea70951d058c1c9010f383c8ab55a6c0dc2e11caafedd8bc3ca3af180114a2",
+            "dependencies": [
+              {
+                "target": "npm:@vanilla-extract/css",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/test/test.stories.tsx",
+            "hash": "075d93d5be78fa039673dc005fea8fbb4c1198b895cd6793fce43270555422ce",
+            "dependencies": [
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              },
+              {
+                "target": "npm:@storybook/react",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/theme-provider/index.ts",
+            "hash": "e607a62acd4523cf394eb11e2fbd59103bf05808d755410ed793ebaa0c96d893"
+          },
+          {
+            "file": "libs/hige-ds/lib/components/theme-provider/theme-provider.tsx",
+            "hash": "557f16584c1b1ffd81a48c9cfa8624fdf492ade19a4710eca55ba18d71c16d37",
+            "dependencies": [
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/typography/base/index.tsx",
+            "hash": "b3a85088d8215a1b511668f03dfda283b86864e7d7c954a88e925b14031d0b66",
+            "dependencies": [
+              {
+                "target": "npm:@vanilla-extract/dynamic",
+                "source": "hige-ds",
+                "type": "static"
+              },
+              {
+                "target": "npm:react",
+                "source": "hige-ds",
+                "type": "static"
+              },
+              {
+                "target": "npm:classnames",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/typography/base/recipe.css.ts",
+            "hash": "fb5c07580202a09786bb9cf79db5fc96f8d6e1ceb983a36c1aaf72e2bc7a2a26",
+            "dependencies": [
+              {
+                "target": "npm:@vanilla-extract/css",
+                "source": "hige-ds",
+                "type": "static"
+              },
+              {
+                "target": "npm:@vanilla-extract/recipes",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/typography/base/styles.css.ts",
+            "hash": "3c0da02c2c9dffe7ea0e4dfa6e365be7cac8d222e95e6418e29c31a8ba85e90a",
+            "dependencies": [
+              {
+                "target": "npm:@vanilla-extract/css",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/components/typography/index.ts",
+            "hash": "012d44bc8f8d4c72fce4b23601949ded2261da2dc890cc18fad776e598701082"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/index.ts",
+            "hash": "aafcc66e11752a5e1d89bac8b73c28a3514533554558ea9776357e9c13ca5110"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/atoms.css.ts",
+            "hash": "5130b4096435b8002309fad482bd26b563fddaaadbf5d6f9afcdd20d0c628c6b",
+            "dependencies": [
+              {
+                "target": "npm:@vanilla-extract/sprinkles",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/index.ts",
+            "hash": "59017e1f44be95886680f587a43f43a46bacf8f2c1c30620ff4bc51662820f9f"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/scale.ts",
+            "hash": "c09a6d61d052d0338f85a5464bd826f7ad4b8aac517ab78360dba55d51f0e219"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/theme.css.ts",
+            "hash": "78755e6e68134df539f2d5d1946f489acd508003ad5f63f1755b9fc61ded59ef",
+            "dependencies": [
+              {
+                "target": "npm:@vanilla-extract/css",
+                "source": "hige-ds",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/alias/horizon-alias.ts",
+            "hash": "f16d7749805bc5585978f0ca7f63bd0adc3b904fffd9ee9106f54ac00ab84694"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/alias/index.ts",
+            "hash": "f8c6ef6fc41219054e753bac62257a10c6b99cefbd6201401577df450f150759"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/accordion.ts",
+            "hash": "4cf6f091feda6b59ffd786593b597f18f699ec3cc8b0fd20f31174a62c5adefe"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/alert.ts",
+            "hash": "3eb010d8ffa6a607ecaaa5f4e8284546b6c8512bd8340fb08815df4f0b4d2568"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/avatar.ts",
+            "hash": "9c0cfcb07316c9084b1025261bd97fda72eb7e5c1d796bc792d47c7621db2f52"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/badge.ts",
+            "hash": "4732ea5237aafa6f73ae3144f646697958d5bdeae004ac3a5db79ff11aea88a7"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/breadcrumbs.ts",
+            "hash": "6ac69f6baadd205e85c57700b15116008abf8be76419613a779534fdf1869e27"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/button.ts",
+            "hash": "c05ff42636118e7debb42e2ea0d08b6af4335e5025fa176d15ba3abaacce788c"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/card.ts",
+            "hash": "d2e1fe939c0b7ec79bad262eef2448bc755e96cea73db75c4b520e05d5206d54"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/checkbox.ts",
+            "hash": "67f40c1f149a9a07b026ff7632f3f8c114944e862ee23d00135a83c71044e5ff"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/date-picker.ts",
+            "hash": "128b8c9f4177df119d10e6023ac7600aed07a369309daeff88cee422c2dbfccc"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/dialog.ts",
+            "hash": "280b039b34046de8565a2b4957954f035210310feed0e1154e3794445ea954bd"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/dismissible-alert.ts",
+            "hash": "17f4486eb32deb57cbe5d72436d993e6b6e7222d645a36ceb167ab4b27d57b09"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/divider.ts",
+            "hash": "89da064db874c16df298df3db9afc3805d4f4401d1fcedec58bd043839d59356"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/drawer.ts",
+            "hash": "8e4fb8d5d296bfdb14c8275f7d0218ea9a0a3882252b78e697f4aefd456f473d"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/dropdown.ts",
+            "hash": "310a31ff3c5d5912e4a70a1b42bbb8f19e475f0416ebd9e6cc2733068f9f8462"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/footer.ts",
+            "hash": "993057ee47b0b90d30cda578fd5b4488da73cdd529a4346d002076fab11bfbe3"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/form-control.ts",
+            "hash": "59d70a36ee5bfd8ffec3a69fc9a38a6877a44711cdd00c69b8e9460d25e15a9d"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/header.ts",
+            "hash": "ba5b39542d8856f7bed2334bc5ccb38ccabb3f8f285ede70cd1b929949111809"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/icon-button.ts",
+            "hash": "cca7bf6f4ade3edd56e2272f84455e1433bac38ffbd26ff93a45cea012c8f149"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/index.ts",
+            "hash": "77cc33dd6bc9993b82afd710c00a31587e2ff60f259cc455401ea548e889334d"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/input.ts",
+            "hash": "59ae631d5613a00fe16f9b27885be3eaa8284cea7bc3d2e8eec40af5687e0079"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/label.ts",
+            "hash": "297b117746fbb4bfda2bafa29ba77cd1170607ac812a09971414b98dc22763d3"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/link.ts",
+            "hash": "b76861195c8b38538d1082a109555466d44935683fa7658a2549f6982d4ed180"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/menu-list.ts",
+            "hash": "6a09d04fbe10be4382723840e7b55170ceb1d9069fa3358cdb519e935abd4cf9"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/navigation.ts",
+            "hash": "d890c6fb46ab252cb9615aa1916acb61c5a9789d8731e520ceb9a97918f911d0"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/overflow-menu.ts",
+            "hash": "eaa611d94aac0f7af86caf91781eb91c86a16226f69a3d5b1b7d843f8e54d59c"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/pagination.ts",
+            "hash": "44f80ce82dad70bf6fb1b21c9448422820ea88e6bf22f6a3bde4e12f7e822d55"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/radio.ts",
+            "hash": "f48d19eafc2dd945f312b74ab0e1d7f9c1c232d1bade5042685da699b47b5fc5"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/search-bar.ts",
+            "hash": "b47e6547c9661a0965bd71e4f24ea8c89aa333e935f9549026ba182acc3921ff"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/segmented-button.ts",
+            "hash": "fbf1cc11562729272f8566ff27f168e0bfd211edbf692f38b51e62e04e73c652"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/side-menu.ts",
+            "hash": "0ffe7d73f78367884be87acff9ba1265330554e3fd3cd3e9a015e3b55410154d"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/skeleton.ts",
+            "hash": "eca5dc3f5d6168ac57446fa9dc0d42d2e761ba8e5f783bdfb5c2bf4a90f674f2"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/status-label.ts",
+            "hash": "0ae39d5ff9e18c7473c3084deb7b14b0df38da41395573c2e3d4f9d9018a2545"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/switch.ts",
+            "hash": "8e02b0a568eb528023a6d218bcb23d208843fd44aded252a44b88027926f85cb"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/table.ts",
+            "hash": "b9fbff029cc62a9e10536a6ab25c1a1ab95a27edf568c7c60fafbecb2649037a"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/tabs.ts",
+            "hash": "f041d5f4bfee03f0a2a071d95979990b14e29ef9fcc5a37b0f47e3a611c1ad4f"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/tag.ts",
+            "hash": "0ef2f6289de38521811137c285a3b1cb8b24e5fca75659010075d5c21d2de31f"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/components/track.ts",
+            "hash": "5498a234b8072f2f8f48ffd0788cc3df832a8ee84ac0cca452b2b604d943e9d6"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/colors/blue.ts",
+            "hash": "4c3fd1531beb2bef078562618b0711df4af8a3dbe6a1c00dced8f2368c7d95c8"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/colors/cobalt.ts",
+            "hash": "e116593dd63e4fc983e9dcb9b14bdaffeceefd7f66532899565265c866d42d62"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/colors/gray.ts",
+            "hash": "e0fd68a437649ade9b68339a9f8ab69e8bb20b41b6f57342eab840caa1a4721a"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/colors/green.ts",
+            "hash": "d44c56bc1b3e11b584a606081b8d588cf34fe323cae459fcf6dcc2257ec720a6"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/colors/light-blue.ts",
+            "hash": "cc4cf5f80f91e1b9429388daac81a8e0c31bff80588fc322c410b5e790f3d3ff"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/colors/misc.ts",
+            "hash": "459f2b66bf67974be453d6bec72b35df8c1caef4c491f59c044636fce994faf9"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/colors/orange.ts",
+            "hash": "84bba7b5b7d4dd7c21a8aa4b5e1535f2fd0eb7f287b58613bb6fe739c717390c"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/colors/pink.ts",
+            "hash": "cebd3564ac87a4ab02cbddb1fefbcf8c3a3aa2fc34cb11c669b2499508eac159"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/colors/purple.ts",
+            "hash": "45b0fec1cc9ef561205d2cfabbdca2171933daa193e73eaa4c9e6f5c31133232"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/colors/red.ts",
+            "hash": "38b4754fc53410bd32dab28446ac99001785e587218c9d0b43b11ee5a2a5ebca"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/colors/transparent.ts",
+            "hash": "479fca90b5849006964e6a4c9706c06896516a871d85060c18db6d3a231b30b9"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/colors/yellow.ts",
+            "hash": "88a5261f58ca2d0a42a03eb76d40df738822b525ac6edfe0e4e275e8c452ab76"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/dimensions/font.ts",
+            "hash": "35d45a647780b445c3bfc30ef522a578fd2370556b555a796bc03fefabc73748"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/dimensions/space.ts",
+            "hash": "cf36e72a3958cf382b975a8421526a90dd91781a45c2444b4d0557bd094bbcbd"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/index.ts",
+            "hash": "fdbafe681f5b9844533b793705288b9bbecffab0ef60c5eaf488a71bad79bb13"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/layout.ts",
+            "hash": "8390221ba2b8e7bf852d2136a051e1fa8305023c83f8e93720e4cc7e48aa2598"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/light/tokens/global/palette.ts",
+            "hash": "6198ca44fd703847ca75617b7963ff2e95f34b45a1c8b5c16e5addb36631cfda"
+          },
+          {
+            "file": "libs/hige-ds/lib/themes/themes.ts",
+            "hash": "e0b42321c93951436855972904342939f5d126a36fbf11b48ef8c3e98023de8d"
+          },
+          {
+            "file": "libs/hige-ds/lib/utils/get-theme-classes.ts",
+            "hash": "ebf1a4d3875cd8d8308e74d10f2ac05d34f5d8bfee2dd40c797546805fd61f2c"
+          },
+          {
+            "file": "libs/hige-ds/lib/utils/index.ts",
+            "hash": "f10b117b4096511221c5bd4709c3087f101490700f6768d5b0309f506038ea6e"
+          },
+          {
+            "file": "libs/hige-ds/lib/utils/join-class-names.ts",
+            "hash": "8190eebae0e74e8007826405864de304a6a4a4e34a018d3e7da77bffaa3f6494"
+          },
+          {
+            "file": "libs/hige-ds/package.json",
+            "hash": "9dd5972fdb4dfebb776701e6405edd2fb6d0ee244ffa8902c42f753ada09a733"
+          },
+          {
+            "file": "libs/hige-ds/project.json",
+            "hash": "948223ec8cb506af387f367c8fb64dc60c026f84b8d2cc021f7d0a6219026510"
+          },
+          {
+            "file": "libs/hige-ds/README.md",
+            "hash": "c4e273e3d7da66f98b37a54fee8f30a92b174b156baa5611dbc619ab9ad1f3d5"
+          },
+          {
+            "file": "libs/hige-ds/tsconfig.json",
+            "hash": "eae316278346fd0c9498fa50d81d0099b7bc031de57f10258f1d493ff642bae7"
+          },
+          {
+            "file": "libs/hige-ds/tsconfig.lib.json",
+            "hash": "17fe25a373a2ab6b1f775f89cf5701d93ddf6254786772a5f86904d992c2cd55"
+          },
+          {
+            "file": "libs/hige-ds/tsconfig.spec.json",
+            "hash": "92aa7f09389358d7690ec5c2fe68c85163293840084e6f46040366b242e1d4a1"
+          }
+        ]
+      }
+    },
+    "my-app": {
+      "name": "my-app",
+      "type": "app",
+      "data": {
+        "name": "my-app",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "apps/my-app/src",
+        "projectType": "application",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "inputs": [
+              "production",
+              "^production"
+            ],
+            "executor": "@nx/webpack:webpack",
+            "outputs": [
+              "{options.outputPath}"
+            ],
+            "defaultConfiguration": "production",
+            "options": {
+              "compiler": "babel",
+              "outputPath": "dist/apps/my-app",
+              "index": "apps/my-app/src/index.html",
+              "baseHref": "/",
+              "main": "apps/my-app/src/main.tsx",
+              "tsConfig": "apps/my-app/tsconfig.app.json",
+              "assets": [
+                "apps/my-app/src/favicon.ico",
+                "apps/my-app/src/assets"
+              ],
+              "styles": [
+                "apps/my-app/src/styles.css"
+              ],
+              "scripts": [],
+              "isolatedConfig": true,
+              "webpackConfig": "apps/my-app/webpack.config.js"
+            },
+            "configurations": {
+              "development": {
+                "extractLicenses": false,
+                "optimization": false,
+                "sourceMap": true,
+                "vendorChunk": true
+              },
+              "production": {
+                "fileReplacements": [
+                  {
+                    "replace": "apps/my-app/src/environments/environment.ts",
+                    "with": "apps/my-app/src/environments/environment.prod.ts"
+                  }
+                ],
+                "optimization": true,
+                "outputHashing": "all",
+                "sourceMap": false,
+                "namedChunks": false,
+                "extractLicenses": true,
+                "vendorChunk": false
+              }
+            }
+          },
+          "serve": {
+            "executor": "@nx/webpack:dev-server",
+            "defaultConfiguration": "development",
+            "options": {
+              "buildTarget": "my-app:build",
+              "hmr": true
+            },
+            "configurations": {
+              "development": {
+                "buildTarget": "my-app:build:development"
+              },
+              "production": {
+                "buildTarget": "my-app:build:production",
+                "hmr": false
+              }
+            }
+          },
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore"
+            ],
+            "executor": "@nx/linter:eslint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "apps/my-app/**/*.{ts,tsx,js,jsx}"
+              ]
+            },
+            "configurations": {}
+          },
+          "serve-static": {
+            "executor": "@nx/web:file-server",
+            "options": {
+              "buildTarget": "my-app:build"
+            }
+          },
+          "test": {
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ],
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "apps/my-app/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            }
+          }
+        },
+        "tags": [],
+        "root": "apps/my-app",
+        "implicitDependencies": [],
+        "files": [
+          {
+            "file": "apps/my-app/.babelrc",
+            "hash": "fcc8c3c7760f8caf056e7201ea1913da9eb106bbc70c751cc5f8c7754fc71fd7"
+          },
+          {
+            "file": "apps/my-app/.eslintrc.json",
+            "hash": "cd7add168bef136cca35b8748a365775518012b244d48f7396f8b9ad54fbd5ac"
+          },
+          {
+            "file": "apps/my-app/jest.config.ts",
+            "hash": "488e26c91434459a79f8c75296d44eed97b1b34ab7e0dca8842b80b16c378069"
+          },
+          {
+            "file": "apps/my-app/project.json",
+            "hash": "83111ecbe756a8478d201cfbf00b9fe6bdb9415bc1bead1786ede06cf5f87e3f"
+          },
+          {
+            "file": "apps/my-app/src/app/app.spec.tsx",
+            "hash": "985a7431f09299960417feef22016690830f2aaaa676e9d784a0f12d6b5da231",
+            "dependencies": [
+              {
+                "target": "npm:@testing-library/react",
+                "source": "my-app",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "apps/my-app/src/app/app.tsx",
+            "hash": "807180b1e0a366397cc6057d26eabad1f7f3c0378327747ccbf7cfe5aee6a15d",
+            "dependencies": [
+              {
+                "target": "hige-ds",
+                "source": "my-app",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "apps/my-app/src/app/nx-welcome.tsx",
+            "hash": "f89790ec4e1f3bd8137fe5583e4684a82a4e1fab1be013a1ddbedd52c924ab77"
+          },
+          {
+            "file": "apps/my-app/src/assets/.gitkeep",
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "file": "apps/my-app/src/environments/environment.prod.ts",
+            "hash": "8849c3a0d8fb1c2418184242899a41382f759169fe9e8c3b73118c1fa844de41"
+          },
+          {
+            "file": "apps/my-app/src/environments/environment.ts",
+            "hash": "ef1cfb4061016f435709c906fd89c664df4d99c1666abb702885fb0033e6bf6c"
+          },
+          {
+            "file": "apps/my-app/src/favicon.ico",
+            "hash": "f8410ea5598b43087f77e64a6b8732f6a7ae6b0a09c94497b383e1e92df95c9c"
+          },
+          {
+            "file": "apps/my-app/src/index.html",
+            "hash": "32da724f59400182d8b8cbd051f09f79be6108763099841ab50fc89c6d41c15a"
+          },
+          {
+            "file": "apps/my-app/src/main.tsx",
+            "hash": "005f8ada290f458f01d388b1111b3cd4de14816e686174379c22b7b900132a86",
+            "dependencies": [
+              {
+                "target": "npm:react",
+                "source": "my-app",
+                "type": "static"
+              },
+              {
+                "target": "npm:react-dom",
+                "source": "my-app",
+                "type": "static"
+              }
+            ]
+          },
+          {
+            "file": "apps/my-app/src/styles.css",
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "file": "apps/my-app/tsconfig.app.json",
+            "hash": "d8c091cd23060cab663ed937e441f9d42176d0b53c5d3961f99e6b768b7cbe9c"
+          },
+          {
+            "file": "apps/my-app/tsconfig.json",
+            "hash": "b81176889407ee8647e16343c1cd7b4a7643fd51e6513762f9dca3855d01295d"
+          },
+          {
+            "file": "apps/my-app/tsconfig.spec.json",
+            "hash": "1ec5f444b991253f868319c4f2754198d3c9ae115933d4db66e5cafb8f36aef2"
+          },
+          {
+            "file": "apps/my-app/webpack.config.js",
+            "hash": "4918250d23e9a481bee269cc929ccd662052cb21091c50d0b9b8a819e2e5af2e",
+            "dependencies": [
+              {
+                "target": "npm:@nx/webpack",
+                "source": "my-app",
+                "type": "static"
+              },
+              {
+                "target": "npm:@nx/react",
+                "source": "my-app",
+                "type": "static"
+              },
+              {
+                "target": "npm:@vanilla-extract/webpack-plugin",
+                "source": "my-app",
+                "type": "static"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "externalNodes": {
+    "npm:@dessert-box/react": {
+      "type": "npm",
+      "name": "npm:@dessert-box/react",
+      "data": {
+        "version": "^0.7.5",
+        "packageName": "@dessert-box/react",
+        "hash": "3dc53924d466f5e001e069019dae2ba415a82c3d1d018b1b94f8a7ed47f855b5"
+      }
+    },
+    "npm:@nrwl/workspace": {
+      "type": "npm",
+      "name": "npm:@nrwl/workspace",
+      "data": {
+        "version": "^18.0.8",
+        "packageName": "@nrwl/workspace",
+        "hash": "9ebbb3b23a47dcac08ec3944895390f00b1866aa3d8f5d5ded66f6906702e505"
+      }
+    },
+    "npm:@radix-ui/react-accordion": {
+      "type": "npm",
+      "name": "npm:@radix-ui/react-accordion",
+      "data": {
+        "version": "^1.1.2",
+        "packageName": "@radix-ui/react-accordion",
+        "hash": "39d609e56d57c929057def91c58c9e76162aeeb1976bd6f52a51a102e1c34aa0"
+      }
+    },
+    "npm:@swc/helpers": {
+      "type": "npm",
+      "name": "npm:@swc/helpers",
+      "data": {
+        "version": "~0.5.0",
+        "packageName": "@swc/helpers",
+        "hash": "f48f6bd5ac9edb812124757ddf2d999e2abd5a34ef2a7e00998ce3248f32a696"
+      }
+    },
+    "npm:@tanstack/react-query": {
+      "type": "npm",
+      "name": "npm:@tanstack/react-query",
+      "data": {
+        "version": "^4.29.5",
+        "packageName": "@tanstack/react-query",
+        "hash": "c0c99d11b366a83fcf5f695064ab8467be65b025026632e5df8f63926fa848d1"
+      }
+    },
+    "npm:@vanilla-extract/dynamic": {
+      "type": "npm",
+      "name": "npm:@vanilla-extract/dynamic",
+      "data": {
+        "version": "^2.1.0",
+        "packageName": "@vanilla-extract/dynamic",
+        "hash": "4e25f7a86d1906b0eddfb21a5597d8671ae51e5ad676943934cdd9ef6b7d5783"
+      }
+    },
+    "npm:@vanilla-extract/recipes": {
+      "type": "npm",
+      "name": "npm:@vanilla-extract/recipes",
+      "data": {
+        "version": "^0.5.2",
+        "packageName": "@vanilla-extract/recipes",
+        "hash": "0c1c44fe5b609b79cff26b2d9e1194b966495ec6347b94b729ad6fa018edab4b"
+      }
+    },
+    "npm:@vanilla-extract/webpack-plugin": {
+      "type": "npm",
+      "name": "npm:@vanilla-extract/webpack-plugin",
+      "data": {
+        "version": "^2.3.7",
+        "packageName": "@vanilla-extract/webpack-plugin",
+        "hash": "c3d8cca90934c1f994d78ab93e0425d0186e844491d04b982f918df45fdb1dd0"
+      }
+    },
+    "npm:classnames": {
+      "type": "npm",
+      "name": "npm:classnames",
+      "data": {
+        "version": "^2.5.1",
+        "packageName": "classnames",
+        "hash": "9e0d4e3d6869fd405ab4a88879eb03ee909fe5e84d2abf40ee7417a375a2f07c"
+      }
+    },
+    "npm:react": {
+      "type": "npm",
+      "name": "npm:react",
+      "data": {
+        "version": "18.2.0",
+        "packageName": "react",
+        "hash": "12ae425a2713db0074860b5b34243594e928fffde0ebe74bc56e8f8fe2d61cf8"
+      }
+    },
+    "npm:react-dom": {
+      "type": "npm",
+      "name": "npm:react-dom",
+      "data": {
+        "version": "18.2.0",
+        "packageName": "react-dom",
+        "hash": "f7a8c5b1429dcdad40352d30cf1f06d7892f82df9875e0cd4ba8e288e84fba54"
+      }
+    },
+    "npm:tslib": {
+      "type": "npm",
+      "name": "npm:tslib",
+      "data": {
+        "version": "^2.3.0",
+        "packageName": "tslib",
+        "hash": "a33e74687104ec3eee715b3039ada1f6fc526a5dbb18f125cfc6c30497bfe2b7"
+      }
+    },
+    "npm:@babel/preset-react": {
+      "type": "npm",
+      "name": "npm:@babel/preset-react",
+      "data": {
+        "version": "^7.14.5",
+        "packageName": "@babel/preset-react",
+        "hash": "ffe30beefd9c64b1432fa6cef7e90109d95d0ec69c3899768ebbabe12c246a48"
+      }
+    },
+    "npm:@nrwl/storybook": {
+      "type": "npm",
+      "name": "npm:@nrwl/storybook",
+      "data": {
+        "version": "^18.1.3",
+        "packageName": "@nrwl/storybook",
+        "hash": "756ca022849c1b82171981f15964f4018328b275cdf368ffd549db255fd8d167"
+      }
+    },
+    "npm:@nx/cypress": {
+      "type": "npm",
+      "name": "npm:@nx/cypress",
+      "data": {
+        "version": "16.0.1",
+        "packageName": "@nx/cypress",
+        "hash": "c285e110527ced42f1256ad178f60f2f47dcba08d32bb28dcc5f75db70ef614a"
+      }
+    },
+    "npm:@nx/eslint-plugin": {
+      "type": "npm",
+      "name": "npm:@nx/eslint-plugin",
+      "data": {
+        "version": "16.0.1",
+        "packageName": "@nx/eslint-plugin",
+        "hash": "a108722a4ffcd23af3b59ad395338b0b51a51686e1fc8d5474a663237dc34078"
+      }
+    },
+    "npm:@nx/jest": {
+      "type": "npm",
+      "name": "npm:@nx/jest",
+      "data": {
+        "version": "16.0.1",
+        "packageName": "@nx/jest",
+        "hash": "5269955242608554c3d0f6a33fe1d0bd32aef711a3f4bfca37d7a764160ad0ca"
+      }
+    },
+    "npm:@nx/js": {
+      "type": "npm",
+      "name": "npm:@nx/js",
+      "data": {
+        "version": "16.0.1",
+        "packageName": "@nx/js",
+        "hash": "6b59a69d012b99a664f2c5378042b0143c410a5526cfd60c4ee46c600fd44297"
+      }
+    },
+    "npm:@nx/linter": {
+      "type": "npm",
+      "name": "npm:@nx/linter",
+      "data": {
+        "version": "16.0.1",
+        "packageName": "@nx/linter",
+        "hash": "d47543f8d445e0aed8f713ef85f13a2e3c700f9d143b26773804524aba196dc1"
+      }
+    },
+    "npm:@nx/react": {
+      "type": "npm",
+      "name": "npm:@nx/react",
+      "data": {
+        "version": "16.0.1",
+        "packageName": "@nx/react",
+        "hash": "edb057496cee7052204ecce9cc74a1dec01eea03c3bc6b5d8533358e4b631ce4"
+      }
+    },
+    "npm:@nx/rollup": {
+      "type": "npm",
+      "name": "npm:@nx/rollup",
+      "data": {
+        "version": "16.0.1",
+        "packageName": "@nx/rollup",
+        "hash": "ae9cdb6edf102b70ae68ee67d8f874455ff74310f8bfd09b36b1b3b3c3b17d49"
+      }
+    },
+    "npm:@nx/webpack": {
+      "type": "npm",
+      "name": "npm:@nx/webpack",
+      "data": {
+        "version": "16.0.1",
+        "packageName": "@nx/webpack",
+        "hash": "c33ce4b55ce2ec1a4863064e5a95a5e6ac0a934beac1c193306b852d17e61ff6"
+      }
+    },
+    "npm:@nx/workspace": {
+      "type": "npm",
+      "name": "npm:@nx/workspace",
+      "data": {
+        "version": "16.0.1",
+        "packageName": "@nx/workspace",
+        "hash": "da768bb8b9d961b8c8ba9296d8a221e88d9f6d56312b31b5bee118b1a80ef1d6"
+      }
+    },
+    "npm:@pmmmwh/react-refresh-webpack-plugin": {
+      "type": "npm",
+      "name": "npm:@pmmmwh/react-refresh-webpack-plugin",
+      "data": {
+        "version": "^0.5.7",
+        "packageName": "@pmmmwh/react-refresh-webpack-plugin",
+        "hash": "4919ec141c94851f0a86c0ca7e1f616a7c440fe43c42441ea69c4a4ca18f1702"
+      }
+    },
+    "npm:@rollup/plugin-url": {
+      "type": "npm",
+      "name": "npm:@rollup/plugin-url",
+      "data": {
+        "version": "^7.0.0",
+        "packageName": "@rollup/plugin-url",
+        "hash": "fc1fc805e1340d4795175e788425630c97a1ed863437509bd5247f9bae3e513b"
+      }
+    },
+    "npm:@storybook/addon-essentials": {
+      "type": "npm",
+      "name": "npm:@storybook/addon-essentials",
+      "data": {
+        "version": "7.0.7",
+        "packageName": "@storybook/addon-essentials",
+        "hash": "9f6a04420b34923412433b7ad7d077ae37e0422fc7b2bd67b024f7cce8c79a01"
+      }
+    },
+    "npm:@storybook/addon-interactions": {
+      "type": "npm",
+      "name": "npm:@storybook/addon-interactions",
+      "data": {
+        "version": "7.0.7",
+        "packageName": "@storybook/addon-interactions",
+        "hash": "e80aa6365457523c0a11688b77d6ab11f4785a756920a83d76c00ef5a4a869a7"
+      }
+    },
+    "npm:@storybook/addon-links": {
+      "type": "npm",
+      "name": "npm:@storybook/addon-links",
+      "data": {
+        "version": "7.0.7",
+        "packageName": "@storybook/addon-links",
+        "hash": "ed9ac98de214b4487d1fe239250e85e7d92c03dcf0105e178adad23c10a34bc4"
+      }
+    },
+    "npm:@storybook/blocks": {
+      "type": "npm",
+      "name": "npm:@storybook/blocks",
+      "data": {
+        "version": "7.0.7",
+        "packageName": "@storybook/blocks",
+        "hash": "a41454eea0dd1f7d668bfa967446aa26d5a1610e835ad1a7f418883d3711d22e"
+      }
+    },
+    "npm:@storybook/react": {
+      "type": "npm",
+      "name": "npm:@storybook/react",
+      "data": {
+        "version": "7.0.7",
+        "packageName": "@storybook/react",
+        "hash": "74fc0a3fc69429847378857281d11688c5e7b2b71fd769babe91270663ccc5b3"
+      }
+    },
+    "npm:@storybook/react-webpack5": {
+      "type": "npm",
+      "name": "npm:@storybook/react-webpack5",
+      "data": {
+        "version": "7.0.7",
+        "packageName": "@storybook/react-webpack5",
+        "hash": "4776d506c2ce116b670213e89b21089aaebf22c09eb748ff82c7b2edc882374b"
+      }
+    },
+    "npm:@storybook/testing-library": {
+      "type": "npm",
+      "name": "npm:@storybook/testing-library",
+      "data": {
+        "version": "0.0.14-next.2",
+        "packageName": "@storybook/testing-library",
+        "hash": "9d05cff3d906fd21fd0e4dbae05b02f8fdf3b71146b44611b503ace9e6d0b02c"
+      }
+    },
+    "npm:@svgr/rollup": {
+      "type": "npm",
+      "name": "npm:@svgr/rollup",
+      "data": {
+        "version": "^6.1.2",
+        "packageName": "@svgr/rollup",
+        "hash": "31d72a5f8aa44bec6580afc5f92571bb9e2b75f3e2472d3371b0931446ca7d3f"
+      }
+    },
+    "npm:@svgr/webpack": {
+      "type": "npm",
+      "name": "npm:@svgr/webpack",
+      "data": {
+        "version": "^6.1.2",
+        "packageName": "@svgr/webpack",
+        "hash": "f8686320e57f6456040dd2c7b7b00039e9d69baf701c9c1cb445f7a71e7832c1"
+      }
+    },
+    "npm:@swc/cli": {
+      "type": "npm",
+      "name": "npm:@swc/cli",
+      "data": {
+        "version": "~0.1.62",
+        "packageName": "@swc/cli",
+        "hash": "21865d79bac536f5a18b2c739f878c9487cead505d95c48fbce1d3f34ae371b5"
+      }
+    },
+    "npm:@swc/core": {
+      "type": "npm",
+      "name": "npm:@swc/core",
+      "data": {
+        "version": "~1.3.51",
+        "packageName": "@swc/core",
+        "hash": "831d2ddddd63560021fe56f6a49cf355f592b2be55bd48f04c11e517af4102c0"
+      }
+    },
+    "npm:@testing-library/react": {
+      "type": "npm",
+      "name": "npm:@testing-library/react",
+      "data": {
+        "version": "14.0.0",
+        "packageName": "@testing-library/react",
+        "hash": "f17e86bb9f8b57cae075939886ce407efc48aca72d269962e0d9aed92fbc192a"
+      }
+    },
+    "npm:@types/jest": {
+      "type": "npm",
+      "name": "npm:@types/jest",
+      "data": {
+        "version": "^29.4.0",
+        "packageName": "@types/jest",
+        "hash": "90eee2ce66d772ca89d6d89276dc58aaa3367a5abeacef95657ac797f2b654e7"
+      }
+    },
+    "npm:@types/node": {
+      "type": "npm",
+      "name": "npm:@types/node",
+      "data": {
+        "version": "18.14.2",
+        "packageName": "@types/node",
+        "hash": "81de8f8549b3f0b7e90d8a958bd8c1600cb6a84922beb7ef9e2e354701d3d45c"
+      }
+    },
+    "npm:@types/react": {
+      "type": "npm",
+      "name": "npm:@types/react",
+      "data": {
+        "version": "18.0.28",
+        "packageName": "@types/react",
+        "hash": "07a40125cf1476694a540d4937fa8b2bbdef18ee54ed8451fc3c4fdc99157b14"
+      }
+    },
+    "npm:@types/react-dom": {
+      "type": "npm",
+      "name": "npm:@types/react-dom",
+      "data": {
+        "version": "18.0.11",
+        "packageName": "@types/react-dom",
+        "hash": "028ca82d6d312c985ee7a71d103a0acc7100d5462449671f0891c55e15fac879"
+      }
+    },
+    "npm:@typescript-eslint/eslint-plugin": {
+      "type": "npm",
+      "name": "npm:@typescript-eslint/eslint-plugin",
+      "data": {
+        "version": "^5.58.0",
+        "packageName": "@typescript-eslint/eslint-plugin",
+        "hash": "7f37420d6b6fca3380225d4a32993c83c96e9e6d69d247da15fbe13e20be1c05"
+      }
+    },
+    "npm:@typescript-eslint/parser": {
+      "type": "npm",
+      "name": "npm:@typescript-eslint/parser",
+      "data": {
+        "version": "^5.58.0",
+        "packageName": "@typescript-eslint/parser",
+        "hash": "f9d4f8d39ba1b69bf5dc2a7abae8f17847852517adc2c2e6a6076d79c379599d"
+      }
+    },
+    "npm:@vanilla-extract/css": {
+      "type": "npm",
+      "name": "npm:@vanilla-extract/css",
+      "data": {
+        "version": "^1.11.0",
+        "packageName": "@vanilla-extract/css",
+        "hash": "001f9db5f1c6d36ee1dc23d58d6f4f7a35f9c7019cea5e3f48eaa083031172f3"
+      }
+    },
+    "npm:@vanilla-extract/sprinkles": {
+      "type": "npm",
+      "name": "npm:@vanilla-extract/sprinkles",
+      "data": {
+        "version": "^1.6.0",
+        "packageName": "@vanilla-extract/sprinkles",
+        "hash": "e58042306166b9e27e596569dd1e9362fc6365ade0444915497c4fec1d3f2822"
+      }
+    },
+    "npm:babel-jest": {
+      "type": "npm",
+      "name": "npm:babel-jest",
+      "data": {
+        "version": "^29.4.1",
+        "packageName": "babel-jest",
+        "hash": "9cbc748088a031fda1f53dbd55332edc2de76fa03b8c948b2bcb3a488f380e61"
+      }
+    },
+    "npm:cypress": {
+      "type": "npm",
+      "name": "npm:cypress",
+      "data": {
+        "version": "^12.2.0",
+        "packageName": "cypress",
+        "hash": "e1423ef4f1ba4baeacf85cee00868273e39394d664bc5d51b0eea72375be8976"
+      }
+    },
+    "npm:eslint": {
+      "type": "npm",
+      "name": "npm:eslint",
+      "data": {
+        "version": "~8.15.0",
+        "packageName": "eslint",
+        "hash": "c3fc3110dbfbfaf413a8f013aa9425d4e587a31c00866508575ce8337e164293"
+      }
+    },
+    "npm:eslint-config-prettier": {
+      "type": "npm",
+      "name": "npm:eslint-config-prettier",
+      "data": {
+        "version": "8.1.0",
+        "packageName": "eslint-config-prettier",
+        "hash": "d3e9b67a7cfe7ef3591b6664ffb6b82f16125b94b210b3f4937b9d4e3ea07640"
+      }
+    },
+    "npm:eslint-plugin-cypress": {
+      "type": "npm",
+      "name": "npm:eslint-plugin-cypress",
+      "data": {
+        "version": "^2.10.3",
+        "packageName": "eslint-plugin-cypress",
+        "hash": "28ada4da52fb11ee58ee308bb1a7a0746a7321ab74e3ee4eb2afb0825d088fb1"
+      }
+    },
+    "npm:eslint-plugin-import": {
+      "type": "npm",
+      "name": "npm:eslint-plugin-import",
+      "data": {
+        "version": "2.27.5",
+        "packageName": "eslint-plugin-import",
+        "hash": "a58144644ca8f7a1065cb36a1880d7d4ccf6520d49e7fa9f592abc8aeea6fd7a"
+      }
+    },
+    "npm:eslint-plugin-jsx-a11y": {
+      "type": "npm",
+      "name": "npm:eslint-plugin-jsx-a11y",
+      "data": {
+        "version": "6.7.1",
+        "packageName": "eslint-plugin-jsx-a11y",
+        "hash": "46c9095cc1fec3245a2667f53eecea415ae7750593c32f212e0d61dc75df1178"
+      }
+    },
+    "npm:eslint-plugin-react": {
+      "type": "npm",
+      "name": "npm:eslint-plugin-react",
+      "data": {
+        "version": "7.32.2",
+        "packageName": "eslint-plugin-react",
+        "hash": "ea19ad52b1da74d67d8d4f8e5d9afa41959a34b834c39ec73d9bc543566625c6"
+      }
+    },
+    "npm:eslint-plugin-react-hooks": {
+      "type": "npm",
+      "name": "npm:eslint-plugin-react-hooks",
+      "data": {
+        "version": "4.6.0",
+        "packageName": "eslint-plugin-react-hooks",
+        "hash": "c2f6ffe183e898cd075be78751981d6b0b4710857a6696a5ea029fb733e5afe3"
+      }
+    },
+    "npm:eslint-plugin-storybook": {
+      "type": "npm",
+      "name": "npm:eslint-plugin-storybook",
+      "data": {
+        "version": "^0.6.11",
+        "packageName": "eslint-plugin-storybook",
+        "hash": "04bb995c195014cbfaf2d9192dd63ef54a1ecbd9724dca970b71d6978e6378af"
+      }
+    },
+    "npm:jest": {
+      "type": "npm",
+      "name": "npm:jest",
+      "data": {
+        "version": "^29.4.1",
+        "packageName": "jest",
+        "hash": "3af3b487c7eed4bc28feab196619415910ede8050371b0702f9ac53ac3475048"
+      }
+    },
+    "npm:jest-environment-jsdom": {
+      "type": "npm",
+      "name": "npm:jest-environment-jsdom",
+      "data": {
+        "version": "^29.4.1",
+        "packageName": "jest-environment-jsdom",
+        "hash": "0fb4564d950f26460d48e380a696ef98c50cab179bdedbc142a9cc19d1eed823"
+      }
+    },
+    "npm:nx": {
+      "type": "npm",
+      "name": "npm:nx",
+      "data": {
+        "version": "16.0.1",
+        "packageName": "nx",
+        "hash": "bacaf3350550bf9bdb77c22d394a71c41ce7f26ccbd01010cc44ffacb4f0fe6b"
+      }
+    },
+    "npm:nx-cloud": {
+      "type": "npm",
+      "name": "npm:nx-cloud",
+      "data": {
+        "version": "latest",
+        "packageName": "nx-cloud",
+        "hash": "23974aa1d7c68dcd836918b3bd0fcde21f1ed17e98b3a166ddb4d12066e481fb"
+      }
+    },
+    "npm:prettier": {
+      "type": "npm",
+      "name": "npm:prettier",
+      "data": {
+        "version": "^2.6.2",
+        "packageName": "prettier",
+        "hash": "edd656866e07e461bbb100c31431768bd26c2290760c79332661c6e4aa0cc7ca"
+      }
+    },
+    "npm:prop-types": {
+      "type": "npm",
+      "name": "npm:prop-types",
+      "data": {
+        "version": "15.8.1",
+        "packageName": "prop-types",
+        "hash": "05f4081dd6e735a7006e93a34bcec67e2c31427ff21cbdb8b2da44cf73479cf4"
+      }
+    },
+    "npm:react-refresh": {
+      "type": "npm",
+      "name": "npm:react-refresh",
+      "data": {
+        "version": "^0.10.0",
+        "packageName": "react-refresh",
+        "hash": "f44e028987a77e164c0f059df6809b9fa718642ba03e66b01c97649d032fc35d"
+      }
+    },
+    "npm:react-test-renderer": {
+      "type": "npm",
+      "name": "npm:react-test-renderer",
+      "data": {
+        "version": "18.2.0",
+        "packageName": "react-test-renderer",
+        "hash": "98886c181b5ab5b1086d5d077a1509edc4ae212248d213d54f9cb9d075a5206a"
+      }
+    },
+    "npm:storybook": {
+      "type": "npm",
+      "name": "npm:storybook",
+      "data": {
+        "version": "7.0.7",
+        "packageName": "storybook",
+        "hash": "e5e64389ae5a2ed175dd1588a045bb6d33133d9fc6f757b1a210c6f6729cf923"
+      }
+    },
+    "npm:ts-jest": {
+      "type": "npm",
+      "name": "npm:ts-jest",
+      "data": {
+        "version": "^29.1.0",
+        "packageName": "ts-jest",
+        "hash": "65aa0d173a2946730a1487267968ac4a1ed568234ea45d9d4e0fa1c4176f61ec"
+      }
+    },
+    "npm:ts-node": {
+      "type": "npm",
+      "name": "npm:ts-node",
+      "data": {
+        "version": "10.9.1",
+        "packageName": "ts-node",
+        "hash": "9948e441d7a81407c49a16f09f63cb47b33f39f904aca2d55f060babe3dbd95f"
+      }
+    },
+    "npm:typescript": {
+      "type": "npm",
+      "name": "npm:typescript",
+      "data": {
+        "version": "~4.9.5",
+        "packageName": "typescript",
+        "hash": "cc481986085d372c898bbecaabafe3431da98239ba36bda989ff589044fe6f06"
+      }
+    },
+    "npm:url-loader": {
+      "type": "npm",
+      "name": "npm:url-loader",
+      "data": {
+        "version": "^4.1.1",
+        "packageName": "url-loader",
+        "hash": "4ec97d17fa07439855441020fb7bf4f1950b28d127a343f2fff54f6d79100794"
+      }
+    }
+  },
+  "dependencies": {
+    "my-app-e2e": [
+      {
+        "source": "my-app-e2e",
+        "target": "my-app",
+        "type": "implicit"
+      },
+      {
+        "source": "my-app-e2e",
+        "target": "npm:cypress",
+        "type": "static"
+      },
+      {
+        "source": "my-app-e2e",
+        "target": "npm:@nx/cypress",
+        "type": "static"
+      }
+    ],
+    "hige-ds": [
+      {
+        "source": "hige-ds",
+        "target": "npm:react",
+        "type": "static"
+      },
+      {
+        "source": "hige-ds",
+        "target": "npm:@radix-ui/react-accordion",
+        "type": "static"
+      },
+      {
+        "source": "hige-ds",
+        "target": "npm:@vanilla-extract/css",
+        "type": "static"
+      },
+      {
+        "source": "hige-ds",
+        "target": "npm:@storybook/react",
+        "type": "static"
+      },
+      {
+        "source": "hige-ds",
+        "target": "npm:classnames",
+        "type": "static"
+      },
+      {
+        "source": "hige-ds",
+        "target": "npm:@vanilla-extract/recipes",
+        "type": "static"
+      },
+      {
+        "source": "hige-ds",
+        "target": "npm:@dessert-box/react",
+        "type": "static"
+      },
+      {
+        "source": "hige-ds",
+        "target": "npm:@vanilla-extract/dynamic",
+        "type": "static"
+      },
+      {
+        "source": "hige-ds",
+        "target": "npm:@vanilla-extract/sprinkles",
+        "type": "static"
+      }
+    ],
+    "my-app": [
+      {
+        "source": "my-app",
+        "target": "npm:@testing-library/react",
+        "type": "static"
+      },
+      {
+        "source": "my-app",
+        "target": "hige-ds",
+        "type": "static"
+      },
+      {
+        "source": "my-app",
+        "target": "npm:react",
+        "type": "static"
+      },
+      {
+        "source": "my-app",
+        "target": "npm:react-dom",
+        "type": "static"
+      },
+      {
+        "source": "my-app",
+        "target": "npm:@nx/webpack",
+        "type": "static"
+      },
+      {
+        "source": "my-app",
+        "target": "npm:@nx/react",
+        "type": "static"
+      },
+      {
+        "source": "my-app",
+        "target": "npm:@vanilla-extract/webpack-plugin",
+        "type": "static"
+      }
+    ]
+  }
+}
