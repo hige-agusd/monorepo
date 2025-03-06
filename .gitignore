@@ -37,3 +37,19 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Nx cache
+node_modules/.cache/nx
+.nx/cache
+nx.log
+
+# Nx outputs
+dist
+build
+
+# Nx cloud
+.nx-cloud

@@ -9,7 +9,7 @@ export function App() {
     <ThemeProvider theme={themeLight}>
 
     <div>
-      <Button prefixContent={<div>@</div>} variant="secondary" onClick={() => alert('click')}>Botonazo</Button>
+      <Button prefixContent={<div>@</div>} variant="primary" onClick={() => alert('click')}>Botonazo</Button>
       <Accordion.Wrapper type="single">
       <Accordion.Item value={'0'} label='Accordion label' text='Text'>
         <Typography>Content...</Typography>

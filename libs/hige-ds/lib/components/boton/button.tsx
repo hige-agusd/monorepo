@@ -36,8 +36,8 @@ export const Button = forwardRef(function Button(
     labelClassNames,
     loadingImage,
     buttonClasses,
-    variant,
-    status,
+    variant = 'primary',
+    status = 'default',
     'data-test': dataTest,
   } = props;
   // const recipeClasses = buttonRecipe({
@@ -116,11 +116,11 @@ export type PrefixSuffixContentPadding = 'S' | 'M' | 'L';
 export interface ButtonProps extends IWithDataTest {
   variant: TButtonVariant;
   // Specify padding to be applied in the left and right sides of the component
-  paddingX: Space;
+  paddingX?: Space;
   // Specify padding to be applied in the top and the bottom of the component
-  paddingY: Space;
+  paddingY?: Space;
   // Specify label size
-  labelSize: VarsBodyFontSize;
+  labelSize?: VarsBodyFontSize;
   // Allows extra customization of font-related CSS
   labelClassNames?: string;
   // Specify the prefix Icon
@@ -131,5 +131,5 @@ export interface ButtonProps extends IWithDataTest {
   prefixSuffixLabelPadding?: PrefixSuffixContentPadding;
   // Specify the loading image
   loadingImage?: JSX.Element;
-  status: 'warning' | 'info' | 'success' | 'danger' | 'default';
+  status?: 'warning' | 'info' | 'success' | 'danger' | 'default';
 }

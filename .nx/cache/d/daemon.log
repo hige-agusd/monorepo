@@ -125128,3 +125128,114 @@ fatal: no path specified
 [NX Daemon Server] - 2024-05-30T13:07:19.227Z - [WATCHER]: Unsubscribed from changes within: c:\Users\usuario\repos\monorepo (outputs)
 [NX Daemon Server] - 2024-05-30T13:07:19.228Z - [WATCHER]: Unsubscribed from changes within: c:\Users\usuario\repos\monorepo (server-process.json)
 [NX Daemon Server] - 2024-05-30T13:07:19.228Z - Server stopped because: "10800000ms of inactivity"
+[NX Daemon Server] - 2024-06-15T17:03:37.782Z - Started listening on: /tmp/248ad6c97f276652ba53/d.sock
+[NX Daemon Server] - 2024-06-15T17:03:37.797Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-06-15T17:03:37.799Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-06-15T17:03:37.802Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-06-15T17:03:37.808Z - [REQUEST]: Client Request for Project Graph Received
+fatal: no path specified
+[NX Daemon Server] - 2024-06-15T17:03:38.290Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-06-15T17:03:39.227Z - Time taken for 'hash changed files from watcher' 39.62689999999998ms
+[NX Daemon Server] - 2024-06-15T17:03:39.229Z - [WATCHER]: Subscribed to changes within: /mnt/c/Users/usuario/repos/monorepo
+[NX Daemon Server] - 2024-06-15T17:03:42.136Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-06-15T17:03:42.143Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-06-15T17:03:42.148Z - Time taken for 'total for creating and serializing project graph' 4327.6618ms
+[NX Daemon Server] - 2024-06-15T17:04:19.025Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-06-15T17:04:19.026Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-06-15T17:04:19.611Z - [REQUEST]: Responding to the client. PROCESS_IN_BACKGROUND
+[NX Daemon Server] - 2024-06-15T17:04:19.612Z - Done responding to the client PROCESS_IN_BACKGROUND
+[NX Daemon Server] - 2024-06-15T17:04:19.613Z - Uploading file artifacts
+[NX Daemon Server] - 2024-06-15T17:04:19.613Z - Done uploading file artifacts
+[NX Daemon Server] - 2024-06-15T17:04:19.614Z - Sending EndRun request
+[NX Daemon Server] - 2024-06-15T17:04:19.762Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-06-15T17:04:25.090Z - Error when sending EndRun
+Error: This workspace is more than a week old and is not connected. Workspaces must be connected within 7 days of creation. Claim your workspace at https://cloud.nx.app
+    at /mnt/c/Users/usuario/repos/monorepo/node_modules/nx-cloud/lib/daemon/process-run-end.js:52:27
+    at Generator.next (<anonymous>)
+    at fulfilled (/mnt/c/Users/usuario/repos/monorepo/node_modules/nx-cloud/lib/daemon/process-run-end.js:5:58)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[NX Daemon Server] - 2024-06-15T17:12:07.378Z - [WATCHER]: Unsubscribed from changes within: /mnt/c/Users/usuario/repos/monorepo (sources)
+[NX Daemon Server] - 2024-06-15T17:12:07.379Z - [WATCHER]: Unsubscribed from changes within: /mnt/c/Users/usuario/repos/monorepo (server-process.json)
+[NX Daemon Server] - 2024-06-15T17:12:07.380Z - Server stopped because: "Lock file changed"
+[NX Daemon Server] - 2024-06-15T17:12:09.856Z - Started listening on: \\.\pipe\nx\C:\Users\usuario\AppData\Local\Temp\ad32693f7a93cfa7d844\d.sock
+[NX Daemon Server] - 2024-06-15T17:12:09.886Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-06-15T17:12:09.889Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-06-15T17:12:09.892Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-06-15T17:12:09.892Z - [WATCHER]: Subscribed to changes within: c:\Users\usuario\repos\monorepo
+[NX Daemon Server] - 2024-06-15T17:12:09.902Z - [REQUEST]: Client Request for Project Graph Received
+fatal: no path specified
+[NX Daemon Server] - 2024-06-15T17:12:10.344Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-06-15T17:12:11.730Z - Time taken for 'hash changed files from watcher' 166.1225000023842ms
+[NX Daemon Server] - 2024-06-15T17:12:13.403Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-06-15T17:12:13.415Z - Time taken for 'total for creating and serializing project graph' 3500.7235999703407ms
+[NX Daemon Server] - 2024-06-15T17:12:13.415Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-06-15T17:12:13.424Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-06-15T17:12:25.755Z - Started listening on: /tmp/248ad6c97f276652ba53/d.sock
+[NX Daemon Server] - 2024-06-15T17:12:25.769Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-06-15T17:12:25.771Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-06-15T17:12:25.774Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-06-15T17:12:25.780Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-06-15T17:12:25.789Z - [WATCHER]: Unsubscribed from changes within: c:\Users\usuario\repos\monorepo (sources)
+[NX Daemon Server] - 2024-06-15T17:12:25.790Z - [WATCHER]: Unsubscribed from changes within: c:\Users\usuario\repos\monorepo (outputs)
+[NX Daemon Server] - 2024-06-15T17:12:25.790Z - [WATCHER]: Unsubscribed from changes within: c:\Users\usuario\repos\monorepo (server-process.json)
+[NX Daemon Server] - 2024-06-15T17:12:25.791Z - Server stopped because: "this process is no longer the current daemon"
+fatal: no path specified
+[NX Daemon Server] - 2024-06-15T17:12:26.262Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-06-15T17:12:26.488Z - Time taken for 'hash changed files from watcher' 47.71760000000006ms
+[NX Daemon Server] - 2024-06-15T17:12:26.489Z - [WATCHER]: Subscribed to changes within: /mnt/c/Users/usuario/repos/monorepo
+[NX Daemon Server] - 2024-06-15T17:12:29.379Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-06-15T17:12:29.387Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-06-15T17:12:29.392Z - Time taken for 'total for creating and serializing project graph' 3598.5326ms
+[NX Daemon Server] - 2024-06-15T17:15:32.172Z - [WATCHER]: libs/hige-ds/lib/components/table/table.tsx was modified
+[NX Daemon Server] - 2024-06-15T17:15:32.590Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-06-15T17:15:33.692Z - Time taken for 'hash changed files from watcher' 275.88039999999455ms
+[NX Daemon Server] - 2024-06-15T17:19:02.797Z - [WATCHER]: libs/hige-ds/lib/components/table/table.tsx was modified
+[NX Daemon Server] - 2024-06-15T17:19:03.359Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-06-15T17:19:03.506Z - Time taken for 'hash changed files from watcher' 263.5323999999673ms
+[NX Daemon Server] - 2024-06-15T17:20:02.734Z - [WATCHER]: libs/hige-ds/lib/components/table/table.tsx was modified
+[NX Daemon Server] - 2024-06-15T17:20:03.383Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-06-15T17:20:03.514Z - Time taken for 'hash changed files from watcher' 203.44160000002012ms
+[NX Daemon Server] - 2024-06-15T17:20:41.326Z - [WATCHER]: libs/hige-ds/lib/components/table/table.stories.tsx was modified
+[NX Daemon Server] - 2024-06-15T17:20:42.338Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-06-15T17:20:42.425Z - Time taken for 'hash changed files from watcher' 174.00849999999627ms
+[NX Daemon Server] - 2024-06-15T17:20:53.020Z - [WATCHER]: libs/hige-ds/lib/components/table/table.stories.tsx was modified
+[NX Daemon Server] - 2024-06-15T17:20:54.947Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-06-15T17:20:55.079Z - Time taken for 'hash changed files from watcher' 242.39609999995446ms
+[NX Daemon Server] - 2024-06-15T17:53:23.345Z - [WATCHER]: 0 file(s) created or restored, 41 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2024-06-15T17:53:23.752Z - [WATCHER]: 0 file(s) created or restored, 2 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2024-06-15T17:53:24.151Z - [WATCHER]: 0 file(s) created or restored, 3 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2024-06-15T17:53:25.026Z - [WATCHER]: 0 file(s) created or restored, 164 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2024-06-15T17:53:26.848Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-06-15T17:53:26.950Z - Time taken for 'hash changed files from watcher' 260.6003000000492ms
+[NX Daemon Server] - 2024-06-15T17:53:31.481Z - [WATCHER]: Unsubscribed from changes within: /mnt/c/Users/usuario/repos/monorepo (sources)
+[NX Daemon Server] - 2024-06-15T17:53:31.482Z - [WATCHER]: Unsubscribed from changes within: /mnt/c/Users/usuario/repos/monorepo (server-process.json)
+[NX Daemon Server] - 2024-06-15T17:53:31.482Z - Server stopped because: "this process is no longer the current daemon"
+[NX Daemon Server] - 2024-06-15T17:53:31.910Z - Started listening on: \\.\pipe\nx\C:\Users\usuario\AppData\Local\Temp\ad32693f7a93cfa7d844\d.sock
+[NX Daemon Server] - 2024-06-15T17:53:31.919Z - [WATCHER]: Subscribed to changes within: c:\Users\usuario\repos\monorepo
+[NX Daemon Server] - 2024-06-15T17:53:31.924Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-06-15T17:53:31.928Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-06-15T17:53:31.929Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-06-15T17:53:31.934Z - [REQUEST]: Client Request for Project Graph Received
+fatal: no path specified
+[NX Daemon Server] - 2024-06-15T17:53:32.281Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-06-15T17:53:32.471Z - Time taken for 'hash changed files from watcher' 109.13560003042221ms
+[NX Daemon Server] - 2024-06-15T17:53:34.417Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-06-15T17:53:34.425Z - Time taken for 'total for creating and serializing project graph' 2482.4451000094414ms
+[NX Daemon Server] - 2024-06-15T17:53:34.425Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-06-15T17:53:34.438Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-06-15T20:53:31.979Z - [WATCHER]: Unsubscribed from changes within: c:\Users\usuario\repos\monorepo (sources)
+[NX Daemon Server] - 2024-06-15T20:53:31.980Z - [WATCHER]: Unsubscribed from changes within: c:\Users\usuario\repos\monorepo (outputs)
+[NX Daemon Server] - 2024-06-15T20:53:31.981Z - [WATCHER]: Unsubscribed from changes within: c:\Users\usuario\repos\monorepo (server-process.json)
+[NX Daemon Server] - 2024-06-15T20:53:31.982Z - Server stopped because: "10800000ms of inactivity"
+[NX Daemon Server] - 2025-03-06T13:53:57.006Z - Started listening on: \\.\pipe\nx\C:\Users\usuario\AppData\Local\Temp\ad32693f7a93cfa7d844\d.sock
+[NX Daemon Server] - 2025-03-06T13:53:57.026Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-03-06T13:53:57.028Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2025-03-06T13:53:57.031Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-03-06T13:53:57.032Z - [WATCHER]: Subscribed to changes within: c:\Users\usuario\repos\monorepo
+[NX Daemon Server] - 2025-03-06T13:53:57.040Z - [REQUEST]: Client Request for Project Graph Received
+fatal: no path specified
+[NX Daemon Server] - 2025-03-06T13:54:01.496Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-06T13:54:02.754Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-03-06T13:54:02.768Z - Time taken for 'total for creating and serializing project graph' 5714.531000137329ms
+[NX Daemon Server] - 2025-03-06T13:54:02.769Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-03-06T13:54:02.776Z - Closed a connection. Number of open connections: 0
